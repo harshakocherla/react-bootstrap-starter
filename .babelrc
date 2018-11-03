@@ -1,3 +1,40 @@
 {
-    "presets": ["env"]
+  "env": {
+    "development": {
+      "presets": [
+        [
+          "env",
+          {
+            "es2015": {
+              "modules": false
+            },
+            "targets": {
+              "ie": 11,
+              "uglify": true
+            }
+          }
+        ],
+        "react"
+      ],
+      "plugins": ["babel-plugin-styled-components"]
+    },
+    "production": {
+      "presets": [
+        [
+          "env",
+          {
+            "es2015": {
+              "modules": false
+            },
+            "targets": {
+              "ie": 11,
+              "uglify": true
+            }
+          }
+        ],
+        "react"
+      ],
+      "plugins": ["babel-plugin-styled-components"]
+    }
+  }
 }

@@ -1,24 +1,33 @@
 // Import react
-import React from 'react';
-
+import React from "react";
+import SignUp from "./components/signup";
+import Login from "./components/login";
+import Header from "./components/header-component";
 class App extends React.Component {
-    render() {
-        return (
-            <div>
+  constructor(props) {
+    super(props);
+    this.state = {
+      showSignUp: false,
+      showLogin: false
+    };
+  }
+  render() {
+    const { showSignUp, showLogin } = this.state;
 
-                <div class="jumbotron">
-                    <h1 class="display-4">Amazing React, Bootstrap and Webpack</h1>
-                    <p class="lead">Created with love</p>
-                    <hr class="my-4"/>
-                    <p>It uses utility classes for typography and spacing to space content out
-                        within the larger container.</p>
-                    <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-                    </p>
-                </div>
-
-            </div>
-        );
-    }
+    return (
+      <React.Fragment>
+        <Header
+          showSignUp={() => {
+            this.setState({ showSignUp: true });
+          }}
+          showLogin={() => {
+            this.setState({ showLogin: true });
+          }}
+        />
+        {showSignUp && <SignUp />}
+        {showLogin && <Login />}
+      </React.Fragment>
+    );
+  }
 }
 export default App;
