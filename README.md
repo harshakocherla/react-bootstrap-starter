@@ -5,12 +5,12 @@ This helps you boostrap your react projects
 ## Installation
 
 Clone this project
-`git clone https://github.com/dinyangetoh/react-webpack-starter.git`
+`git clone https://github.com/harshakocherla/react-bootstrap-starter.git`
 
-### Prerequisites 
+### Prerequisites
 
-* NodeJs
-* npm
+- NodeJs
+- npm
 
 Install babel and webpack tools globally if you don't have them
 
@@ -28,8 +28,8 @@ Launch the project demo
 
 `npm start`
 
-If it is successful, the demo will be launched on `http://localhost:3000` 
+If it is successful, the demo will be launched on `http://localhost:3000`
 
 ## Contributors
 
-David Inyang-Etoh @dinyangetoh
+Harsha Kocherla
