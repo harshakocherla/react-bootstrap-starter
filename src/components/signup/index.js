@@ -3,42 +3,46 @@ import { PersonalDetails } from "./personal-details";
 import { AccountDetails } from "./account-details";
 import { CardLink, Card, CardTitle, CardBody, Button } from "reactstrap";
 import { cardWrapperStyle, buttonStyle } from "../../styles";
+import { PaymentDetails } from "./payment-details";
 
 export default class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showNext: false
+      route: 1
     };
   }
   render() {
-    const { showNext } = this.state;
+    const { route } = this.state;
     return (
       <Card style={cardWrapperStyle}>
         <CardBody>
           <CardTitle>Sign up</CardTitle>
-          {showNext && (
+          {route > 1 && (
             <CardLink
               onClick={() => {
-                this.setState({ showNext: false });
+                this.setState({ route: route - 1 });
               }}
             >
               {`<Back`}
             </CardLink>
           )}
         </CardBody>
-        {!showNext && <PersonalDetails />}
-        {showNext && <AccountDetails />}
+        {route === 1 && <PersonalDetails />}
+        {route === 2 && <PaymentDetails />}
+        {route === 3 && <AccountDetails />}
         <Button
           color="primary"
           onClick={() => {
-            showNext
-              ? console.log("data saved")
-              : this.setState({ showNext: true });
+            route < 3
+              ? this.setState({
+                  route: route + 1
+                })
+              : console.log("data saved");
           }}
           style={buttonStyle}
         >
-          {showNext ? "submit" : "next"}
+          {route < 3 ? "next" : "submit"}
         </Button>
       </Card>
     );
