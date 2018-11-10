@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CardSubtitle,
   CardBody,
@@ -10,6 +10,14 @@ import {
 import { formStyle } from "../../styles";
 
 export default function AccountDetails(props) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  props.accountDetails({
+    username,
+    password,
+    confirmPassword
+  });
   return (
     <CardBody>
       <CardSubtitle>Account Details</CardSubtitle>
@@ -20,6 +28,7 @@ export default function AccountDetails(props) {
             type="text"
             name="username"
             id="username"
+            onChange={({ target: { value } }) => setUsername(value)}
             placeholder="username"
           />
         </FormGroup>
@@ -29,6 +38,7 @@ export default function AccountDetails(props) {
             type="password"
             name="password"
             id="password"
+            onChange={({ target: { value } }) => setPassword(value)}
             placeholder="password"
           />
         </FormGroup>
@@ -38,6 +48,7 @@ export default function AccountDetails(props) {
             type="password"
             name="confirmPassword"
             id="confirmPassword"
+            onChange={({ target: { value } }) => setConfirmPassword(value)}
             placeholder="confirm password"
           />
         </FormGroup>

@@ -38,17 +38,17 @@ export default function Login(props) {
               placeholder="password"
             />
           </FormGroup>
-          <Button
-            color="primary"
-            onClick={() => {
-              console.log("data saved");
-            }}
-            style={buttonStyle}
-          >
-            login
-          </Button>
         </Form>
       </CardBody>
+      <Button
+        color="primary"
+        onClick={() => {
+          console.log("data saved");
+        }}
+        style={buttonStyle}
+      >
+        login
+      </Button>
     </Card>
   );
 }
