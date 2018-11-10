@@ -40,8 +40,6 @@ export default function PersonalDetails(props) {
           <Label for="firstName">First Name</Label>
           <Input
             type="text"
-            name="firstName"
-            id="firstName"
             placeholder="Matt"
             onChange={({ target: { value } }) => setFirstName(value)}
           />
@@ -50,8 +48,6 @@ export default function PersonalDetails(props) {
           <Label for="lastName">Last Name</Label>
           <Input
             type="text"
-            name="lastName"
-            id="lastName"
             placeholder="Granmoe"
             onChange={({ target: { value } }) => setLastName(value)}
           />
@@ -60,8 +56,6 @@ export default function PersonalDetails(props) {
           <Label for="email">Email</Label>
           <Input
             type="email"
-            name="email"
-            id="email"
             placeholder="matt.granmoe@gmail.com"
             onChange={({ target: { value } }) => setEmail(value)}
           />
@@ -70,16 +64,12 @@ export default function PersonalDetails(props) {
           <Label for="address">Address</Label>
           <Input
             type="text"
-            name="address.addressline1"
-            id="addressLine1"
             placeholder="address line 1"
             onChange={({ target: { value } }) => setAddressline1(value)}
           />
           <br />
           <Input
             type="text"
-            name="address.addressline2"
-            id="addressline2"
             placeholder="address line 2"
             onChange={({ target: { value } }) => setAddressline2(value)}
           />
@@ -88,8 +78,6 @@ export default function PersonalDetails(props) {
             <Col md={4}>
               <Input
                 type="text"
-                name="city"
-                id="city"
                 placeholder="city"
                 onChange={({ target: { value } }) => setCity(value)}
               />
@@ -97,8 +85,6 @@ export default function PersonalDetails(props) {
             <Col md={4}>
               <Input
                 type="text"
-                name="state"
-                id="state"
                 placeholder="state"
                 onChange={({ target: { value } }) => setState(value)}
               />
@@ -106,8 +92,6 @@ export default function PersonalDetails(props) {
             <Col md={4}>
               <Input
                 type="text"
-                name="zip"
-                id="zip"
                 placeholder="zip"
                 onChange={({ target: { value } }) => setZip(value)}
               />

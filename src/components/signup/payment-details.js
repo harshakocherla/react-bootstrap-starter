@@ -30,8 +30,6 @@ export default function PaymentDetails(props) {
           <Label for="nameOnCard">Name on card</Label>
           <Input
             type="text"
-            name="nameOnCard"
-            id="nameOnCard"
             onChange={({ target: { value } }) => setNameOnCard(value)}
             placeholder="Matt Granmoe"
           />
@@ -40,8 +38,6 @@ export default function PaymentDetails(props) {
           <Label for="cardNumber">Card Number</Label>
           <Input
             type="text"
-            name="cardNumber"
-            id="cardNumber"
             onChange={({ target: { value } }) => setCardNumer(value)}
             placeholder="xxxx-xxxx-xxxx-xxxx"
           />
@@ -51,8 +47,6 @@ export default function PaymentDetails(props) {
             <Label for="cvv">CVV</Label>
             <Input
               type="text"
-              name="cvv"
-              id="cvv"
               placeholder="cvv"
               onChange={({ target: { value } }) => setCvv(value)}
             />
@@ -61,8 +55,6 @@ export default function PaymentDetails(props) {
             <Label for="zip">ZIP</Label>
             <Input
               type="text"
-              name="zip"
-              id="zip"
               placeholder="zip"
               onChange={({ target: { value } }) => setZip(value)}
             />

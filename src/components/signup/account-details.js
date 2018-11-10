@@ -26,8 +26,6 @@ export default function AccountDetails(props) {
           <Label for="username">User Name</Label>
           <Input
             type="text"
-            name="username"
-            id="username"
             onChange={({ target: { value } }) => setUsername(value)}
             placeholder="username"
           />
@@ -36,8 +34,6 @@ export default function AccountDetails(props) {
           <Label for="password">Password</Label>
           <Input
             type="password"
-            name="password"
-            id="password"
             onChange={({ target: { value } }) => setPassword(value)}
             placeholder="password"
           />
@@ -46,8 +42,6 @@ export default function AccountDetails(props) {
           <Label for="confirmPassword">Confirm Password</Label>
           <Input
             type="password"
-            name="confirmPassword"
-            id="confirmPassword"
             onChange={({ target: { value } }) => setConfirmPassword(value)}
             placeholder="confirm password"
           />

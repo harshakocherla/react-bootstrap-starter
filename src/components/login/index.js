@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CardTitle,
   Card,
@@ -13,6 +13,8 @@ import {
 import { cardWrapperStyle, buttonStyle } from "../../styles";
 
 export default function Login(props) {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <Card style={cardWrapperStyle}>
       <CardBody>
@@ -24,18 +26,16 @@ export default function Login(props) {
             <Label for="username">User Name</Label>
             <Input
               type="text"
-              name="username"
-              id="username"
               placeholder="username"
+              onChange={({ target: { value } }) => setUsername(value)}
             />
           </FormGroup>
           <FormGroup>
             <Label for="password">Password</Label>
             <Input
               type="password"
-              name="password"
-              id="password"
               placeholder="password"
+              onChange={({ target: { value } }) => setPassword(value)}
             />
           </FormGroup>
         </Form>
@@ -43,7 +43,7 @@ export default function Login(props) {
       <Button
         color="primary"
         onClick={() => {
-          console.log("data saved");
+          console.log({ username, password });
         }}
         style={buttonStyle}
       >
