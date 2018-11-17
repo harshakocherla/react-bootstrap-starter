@@ -10,18 +10,8 @@ import {
   Input
 } from "reactstrap";
 import { formStyle } from "../../styles";
-
 export default function PaymentDetails(props) {
-  const [nameOnCard, setNameOnCard] = useState("");
-  const [cardNumber, setCardNumer] = useState("");
-  const [cvv, setCvv] = useState("");
-  const [zip, setZip] = useState("");
-  props.paymentDetails({
-    nameOnCard,
-    cardNumber,
-    cvv,
-    zip
-  });
+  const { paymentDetails } = props;
   return (
     <CardBody>
       <CardSubtitle>Payment Details</CardSubtitle>
@@ -30,7 +20,9 @@ export default function PaymentDetails(props) {
           <Label for="nameOnCard">Name on card</Label>
           <Input
             type="text"
-            onChange={({ target: { value } }) => setNameOnCard(value)}
+            onChange={({ target: { value } }) =>
+              paymentDetails({ nameoncard: value })
+            }
             placeholder="Matt Granmoe"
           />
         </FormGroup>
@@ -38,7 +30,9 @@ export default function PaymentDetails(props) {
           <Label for="cardNumber">Card Number</Label>
           <Input
             type="text"
-            onChange={({ target: { value } }) => setCardNumer(value)}
+            onChange={({ target: { value } }) =>
+              paymentDetails({ cardNumber: value })
+            }
             placeholder="xxxx-xxxx-xxxx-xxxx"
           />
         </FormGroup>
@@ -48,7 +42,9 @@ export default function PaymentDetails(props) {
             <Input
               type="text"
               placeholder="cvv"
-              onChange={({ target: { value } }) => setCvv(value)}
+              onChange={({ target: { value } }) =>
+                paymentDetails({ cvv: value })
+              }
             />
           </Col>
           <Col md={6}>
@@ -56,7 +52,9 @@ export default function PaymentDetails(props) {
             <Input
               type="text"
               placeholder="zip"
-              onChange={({ target: { value } }) => setZip(value)}
+              onChange={({ target: { value } }) =>
+                paymentDetails({ zip: value })
+              }
             />
           </Col>
         </Row>

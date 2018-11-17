@@ -5,12 +5,9 @@ import { CardLink, Card, CardTitle, CardBody, Button } from "reactstrap";
 import { cardWrapperStyle, buttonStyle } from "../../styles";
 import PaymentDetails from "./payment-details";
 
-let userDetails = {};
 export default function SignUp() {
   const [route, setRoute] = useState(1);
-  const setDetails = details => {
-    userDetails = Object.assign(userDetails, details);
-  };
+  const [signupDetails, setSignupDetails] = useState({});
   return (
     <Card style={cardWrapperStyle}>
       <CardBody>
@@ -26,18 +23,30 @@ export default function SignUp() {
         )}
       </CardBody>
       {route === 1 && (
-        <PersonalDetails personalDetails={details => setDetails(details)} />
+        <PersonalDetails
+          personalDetails={details =>
+            setSignupDetails({ ...signupDetails, ...details })
+          }
+        />
       )}
       {route === 2 && (
-        <PaymentDetails paymentDetails={details => setDetails(details)} />
+        <PaymentDetails
+          paymentDetails={details =>
+            setSignupDetails({ ...signupDetails, ...details })
+          }
+        />
       )}
       {route === 3 && (
-        <AccountDetails accountDetails={details => setDetails(details)} />
+        <AccountDetails
+          accountDetails={details =>
+            setSignupDetails({ ...signupDetails, ...details })
+          }
+        />
       )}
       <Button
         color="primary"
         onClick={() => {
-          route < 3 ? setRoute(route + 1) : console.log({ userDetails });
+          route < 3 ? setRoute(route + 1) : console.log({ signupDetails });
         }}
         style={buttonStyle}
       >

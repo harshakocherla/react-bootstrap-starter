@@ -10,14 +10,7 @@ import {
 import { formStyle } from "../../styles";
 
 export default function AccountDetails(props) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  props.accountDetails({
-    username,
-    password,
-    confirmPassword
-  });
+  const { accountDetails } = props;
   return (
     <CardBody>
       <CardSubtitle>Account Details</CardSubtitle>
@@ -26,7 +19,9 @@ export default function AccountDetails(props) {
           <Label for="username">User Name</Label>
           <Input
             type="text"
-            onChange={({ target: { value } }) => setUsername(value)}
+            onChange={({ target: { value } }) =>
+              accountDetails({ username: value })
+            }
             placeholder="username"
           />
         </FormGroup>
@@ -34,7 +29,9 @@ export default function AccountDetails(props) {
           <Label for="password">Password</Label>
           <Input
             type="password"
-            onChange={({ target: { value } }) => setPassword(value)}
+            onChange={({ target: { value } }) =>
+              accountDetails({ password: value })
+            }
             placeholder="password"
           />
         </FormGroup>
@@ -42,7 +39,9 @@ export default function AccountDetails(props) {
           <Label for="confirmPassword">Confirm Password</Label>
           <Input
             type="password"
-            onChange={({ target: { value } }) => setConfirmPassword(value)}
+            onChange={({ target: { value } }) =>
+              accountDetails({ confirmpassword: value })
+            }
             placeholder="confirm password"
           />
         </FormGroup>
