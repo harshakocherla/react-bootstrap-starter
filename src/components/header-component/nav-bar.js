@@ -12,10 +12,10 @@ import {
   DropdownMenu,
   DropdownItem
 } from "reactstrap";
+import { Link } from "react-router-dom";
 
 export default function NavBar(props) {
   const [isOpen, setIsOpen] = useState(false);
-  const { showSignUp, showLogin } = props;
   return (
     <Navbar color="light" light expand="md">
       <NavbarBrand href="/">Art Market</NavbarBrand>
@@ -23,10 +23,14 @@ export default function NavBar(props) {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <NavLink onClick={showSignUp}>sign up</NavLink>
+            <NavLink>
+              <Link to="/signup">sign up</Link>
+            </NavLink>
           </NavItem>
           <NavItem>
-            <NavLink onClick={showLogin}>login</NavLink>
+            <NavLink>
+              <Link to="login">login</Link>
+            </NavLink>
           </NavItem>
           <UncontrolledDropdown nav inNavbar>
             <DropdownToggle nav caret>

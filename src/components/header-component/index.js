@@ -5,7 +5,7 @@ import { Jumbotron, Button } from "reactstrap";
 export default function Header(props) {
   return (
     <React.Fragment>
-      <NavBar showSignUp={props.showSignUp} showLogin={props.showLogin} />
+      <NavBar />
       <Jumbotron style={{ height: "50%" }}>
         <h1 className="display-3">Hello Art Lovers!</h1>
       </Jumbotron>

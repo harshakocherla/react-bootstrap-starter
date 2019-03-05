@@ -1,26 +1,17 @@
 // Import react
 import React, { useState } from "react";
-import SignUp from "./components/signup";
-import Login from "./components/login";
-import Header from "./components/header-component";
-export default function App() {
-  const [showSignUp, setShowSignUp] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
+import store, { history } from "./state/store";
 
+import { ConnectedRouter } from "connected-react-router";
+import { Provider } from "react-redux";
+import NavTabs from "./routes";
+
+export default function App() {
   return (
-    <React.Fragment>
-      <Header
-        showSignUp={() => {
-          setShowSignUp(true);
-          setShowLogin(false);
-        }}
-        showLogin={() => {
-          setShowLogin(true);
-          setShowSignUp(false);
-        }}
-      />
-      {showSignUp && <SignUp />}
-      {showLogin && <Login />}
-    </React.Fragment>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <NavTabs />
+      </ConnectedRouter>
+    </Provider>
   );
 }

@@ -4,8 +4,10 @@ import AccountDetails from "./account-details";
 import { CardLink, Card, CardTitle, CardBody, Button } from "reactstrap";
 import { cardWrapperStyle, buttonStyle } from "../../styles";
 import PaymentDetails from "./payment-details";
+import { connect } from "react-redux";
+import { saveDetails } from "../../state/actions";
 
-export default function SignUp() {
+function SignUp({ saveDetails }) {
   const [route, setRoute] = useState(1);
   const [signupDetails, setSignupDetails] = useState({});
   return (
@@ -46,7 +48,7 @@ export default function SignUp() {
       <Button
         color="primary"
         onClick={() => {
-          route < 3 ? setRoute(route + 1) : console.log({ signupDetails });
+          route < 3 ? setRoute(route + 1) : saveDetails({ signupDetails });
         }}
         style={buttonStyle}
       >
@@ -55,3 +57,8 @@ export default function SignUp() {
     </Card>
   );
 }
+
+export default connect(
+  null,
+  { saveDetails }
+)(SignUp);
